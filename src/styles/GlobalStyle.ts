@@ -36,25 +36,4 @@ export const GlobalStyle = createGlobalStyle`
     a{
         text-decoration: none;
     }
-
-    .title {
-    font-size: 48px;
-    color: #ffffff;
-    width: 640px;
-  }
-
-  .subtitle {
-    font-size: 18px;
-    width: 480px;
-    color: #e0dedc;
-  }
-
-  .purshase-button{
-      background-color: ${({ theme }) => theme.colors.secondary};
-      color: ${({ theme }) => theme.colors.title};
-      height: 40px;
-      width: 120px;
-      margin-top: 12px;
-  }
-
 `;
