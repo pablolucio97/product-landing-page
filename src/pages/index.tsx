@@ -4,72 +4,81 @@ import Image from 'next/Image'
 import { PrimaryButton } from '../components/PrimaryButton'
 import { SubTitle } from '../components/SubTitle'
 import { Title } from '../components/Title'
-import styles from './styles.module.scss'
 
 import { RevealFade } from '../components/RevealFade'
 import { GroupInfo } from '../components/GroupInfo'
 import { MdDesignServices, MdOutlineFastForward } from 'react-icons/md'
-import styled from 'styled-components'
+import { Section } from '../components/Section'
+import { Container } from '../components/Container'
+import {
+  ContentContainer,
+  FirstFeatureSection,
+  PageContainer,
+  PriceContainer,
+  SecondFeatureSection,
+  TitleContainer,
+  TopSection
+ } from '../styles'
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <PageContainer>
       <Head>
         <title>Landing</title>
       </Head>
-      <section id="top-section" className={styles.topSection}>
-        <header>
-          <Image
-            src="https://www.pablosilvadev.com.br/logo.svg"
-            alt="psd-landing-page"
-            width={48}
-            height={48}
-          />
-        </header>
-        <div className={styles.contentContainer}>
-          <img src="/phone.png" alt="psd" />
-          <div className={styles.titleContainer}>
+      <header>
+        <Image
+          src="https://www.pablosilvadev.com.br/logo.svg"
+          alt="psd-landing-page"
+          width={48}
+          height={48}
+        />
+      </header>
+      <TopSection id="top-section">
+        <ContentContainer>
+          {/* eslint-disable-next-line*/}
+          <img src="/phone.png" alt="psd" width={400} />
+          <TitleContainer>
             <Title
               content='Curta cada momento com o super headphone'
-              className={styles.titleLight}
+              className='titleLight'
             />
             <SubTitle
               content='Para Iphone ou android. Não importa a plataforma, temos o produto certo para você.'
-              className={styles.subtitleLight}
+              className='subtitleLight'
             />
-            <div className={styles.priceContainer}>
+            <PriceContainer>
               <h1>R$ 299,99</h1>
               <SubTitle
                 content='Preço original: R$ 399,99'
-                className={styles.subtitleLight}
+                className='subtitleLight'
               />
               <PrimaryButton
                 title='Comprar agora'
                 onClick={() => { }}
-                className={styles.purshaseButton}
               />
-            </div>
-          </div>
-        </div>
-      </section>
+            </PriceContainer>
+          </TitleContainer>
+        </ContentContainer>
+      </TopSection>
 
-      <section id="first-feature-section" className={styles.firstFeatureSection}>
+      <FirstFeatureSection id="first-feature-section">
         <RevealFade>
-          <div className={styles.contentContainer}>
-            <div className={styles.titleContainer}>
+          <ContentContainer>
+            <TitleContainer>
               <Title
                 content='Curta cada momento com o super headphone'
-                className={styles.titleDark}
+                className='titleDark'
               />
               <SubTitle
                 content='Para Iphone ou android. Não importa a plataforma, temos o produto certo para você.'
-                className={styles.subtitleDark}
+                className='subtitleDark'
                 style={{ marginTop: 12, marginBottom: 12 }}
               />
               <GroupInfo
                 title='Desgin exclusivo'
                 content='Desenvolvido por designers profissionais'
-                className={styles.featureCard}
+                className='featureCard'
                 titleClassName='cardTitle'
                 contentClassName='cardSubTitle'
               >
@@ -78,23 +87,27 @@ const Home: NextPage = () => {
               <GroupInfo
                 title='Praticidade total'
                 content='Pensado para proporcionar total praticidade'
-                className={styles.featureCard}
+                className='featureCard'
                 titleClassName='cardTitle'
                 contentClassName='cardSubTitle'
               >
                 <MdOutlineFastForward size={24} />
               </GroupInfo>
-            </div>
+            </TitleContainer>
             <RevealFade
               right
             >
               <img src="/phone2.png" alt="psd" />
             </RevealFade>
-          </div>
+          </ContentContainer>
         </RevealFade>
-      </section>
+      </FirstFeatureSection>
 
-    </div>
+      <SecondFeatureSection id="second-feature-section">
+
+      </SecondFeatureSection>
+
+    </PageContainer>
   )
 }
 
