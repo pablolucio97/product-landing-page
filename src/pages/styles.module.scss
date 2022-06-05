@@ -1,0 +1,69 @@
+/* primary: "#5454d4",
+primary_light: "#6565e9",
+primary_dark: "#413e65",
+secondary: "#fedc5a",
+background_primary: "#ffffff",
+background_secondary: "#e0dedc",
+title: "#19191b",
+text: "#222222",
+element_base: "#f7f7fb",
+success: "#77bf41",
+alert: "#d97934",
+error: "#d9344f",
+white: "#ffffff",
+silver: "#C0C0C0",
+black: "#000000", */
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ffff;
+  display: flex;
+  flex-direction: column;
+
+  & header {
+    width: 100%;
+    height: 80px;
+    padding: 16px;
+  }
+
+  //topSection
+
+  .topSection {
+    min-height: 100vh;
+    background-color: #5454d4;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contentContainer {
+    display: flex;
+    justify-content: center;
+    width: 980px;
+    margin: 120px auto;
+  }
+
+  .titleContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 80px;
+  }
+
+  .priceContainer {
+    display: flex;
+    flex-direction: column;
+    height: 160px;
+    width: 320px;
+    background-color: #6565e9;
+    padding: 12px;
+    border-radius: 8px;
+    & h1 {
+      color: #77bf41;
+      font-size: 40px;
+    }
+    & h3 {
+      text-decoration: line-through;
+    }
+  }
+}
