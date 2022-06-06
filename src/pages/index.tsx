@@ -8,7 +8,7 @@ import { Title } from '../components/Title'
 
 import { RevealFade } from '../components/RevealFade'
 import { GroupInfo } from '../components/GroupInfo'
-import { MdDesignServices, MdOutlineFastForward } from 'react-icons/md'
+import { MdDesignServices, MdOutlineFastForward, MdZoomOut } from 'react-icons/md'
 import { Section } from '../components/Section'
 import { Container } from '../components/Container'
 import {
@@ -27,6 +27,10 @@ import { FooterLink } from '../components/Footer/FooterLink'
 import { FooterSecondSection } from '../components/Footer/FooterSecondSection'
 import { FooterTitle } from '../components/Footer/FooterTitle'
 import { FooterThirdSection } from '../components/Footer/FooterThirdSection'
+import { FooterFourthSection } from '../components/Footer/FooterFourthSection'
+import { SocialCollection } from '../components/SocialCollection'
+import { FooterBadge } from '../components/FooterBadge'
+import { Divider } from '../components/Divider'
 
 const Home: NextPage = () => {
   return (
@@ -269,30 +273,13 @@ const Home: NextPage = () => {
           />
         </LineContainer>
       </Section>
-      <Footer
-        style={{
-          backgroundColor: theme.colors.white,
-          fontWeight: 500
-        }}
-      >
+      <Footer>
         <FooterFirstSection>
-          <FooterLink
-            url='/'
-            content='Páginas'
-            style={{
-              color: theme.colors.black,
-              fontWeight: 500,
-              fontSize: theme.sizes.xlarge
-            }}
-          />
-        </FooterFirstSection>
-        <FooterSecondSection>
           <FooterTitle
-            content='About'
+            content='Sobre nós'
             style={{
               color: theme.colors.black,
               fontWeight: 500,
-              fontSize: theme.sizes.large
             }}
           />
           <FooterLink
@@ -306,6 +293,31 @@ const Home: NextPage = () => {
           <FooterLink
             url='/'
             content='Nossa história'
+            style={{
+              color: theme.colors.black,
+              fontWeight: 300,
+            }}
+          />
+        </FooterFirstSection>
+        <FooterSecondSection>
+          <FooterTitle
+            content='Soluções'
+            style={{
+              color: theme.colors.black,
+              fontWeight: 500,
+            }}
+          />
+          <FooterLink
+            url='/'
+            content='Landing Pages'
+            style={{
+              color: theme.colors.black,
+              fontWeight: 300,
+            }}
+          />
+          <FooterLink
+            url='/'
+            content='Sites institucionais'
             style={{
               color: theme.colors.black,
               fontWeight: 300,
@@ -314,32 +326,56 @@ const Home: NextPage = () => {
         </FooterSecondSection>
         <FooterThirdSection>
           <FooterTitle
-            content='About'
+            content='Nossas redes'
             style={{
               color: theme.colors.black,
               fontWeight: 500,
-              fontSize: theme.sizes.large
             }}
           />
-          <FooterLink
-            url='/'
-            content='Nossa missão'
-            style={{
-              color: theme.colors.black,
-              fontWeight: 300,
-            }}
-          />
-          <FooterLink
-            url='/'
-            content='Nossa história'
-            style={{
-              color: theme.colors.black,
-              fontWeight: 300,
-            }}
+          <SocialCollection
+            linkedinUrl='/'
+            youtubeUrl='/'
+            facebookUrl='/'
+            githubUrl='/'
+            twitterUrl='/'
+            instagramUrl='/'
           />
         </FooterThirdSection>
+        <FooterFourthSection>
+          <FooterTitle
+            content='Links úteis'
+            style={{
+              color: theme.colors.black,
+              fontWeight: 500,
+            }}
+          />
+          <FooterLink
+            url='/'
+            content='Política de privacidade'
+            style={{
+              color: theme.colors.black,
+              fontWeight: 300,
+            }}
+          />
+          <FooterLink
+            url='/'
+            content='Termos de uso'
+            style={{
+              color: theme.colors.black,
+              fontWeight: 300,
+            }}
+          />
+        </FooterFourthSection>
       </Footer>
-
+      <FooterBadge>
+        <Divider />
+        <Text
+          content='PabloSilvaDev - 2022 - CNPJ 9834 9332'
+          style={{
+            fontSize: 10
+          }}
+        />
+      </FooterBadge>
     </PageContainer>
   )
 }

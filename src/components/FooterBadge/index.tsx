@@ -1,20 +1,14 @@
-import { CSSProperties, ReactNode } from "react";
+import React, { CSSProperties, ReactNode } from 'react';
+import { Container } from './styles';
 
-import {
-    Container,
-} from './styles';
 
-interface FooterProps {
+interface FooterBadge {
     children: ReactNode;
     style?: CSSProperties;
     className?: string;
 }
 
-export function Footer({
-    children,
-    style,
-    className,
-}: FooterProps) {
+export function FooterBadge({ children, style, className }: FooterBadge) {
     return (
         <Container
             style={style}
@@ -24,4 +18,3 @@ export function Footer({
         </Container>
     )
 }
-
