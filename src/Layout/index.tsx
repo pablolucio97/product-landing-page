@@ -17,6 +17,8 @@ import { DrawerButton } from '../components/DrawerButton'
 import { HeaderLogoContainer } from '../components/Header/HeaderLogoContainer'
 import { Logo } from '../components/Logo'
 import { Header } from '../components/Header'
+import { HeaderLinksContainer } from '../components/Header/HeaderLinksContainer'
+import { HeaderLink } from '../components/Header/HeaderLink'
 
 interface LayoutProps {
     children: ReactNode
@@ -56,7 +58,31 @@ const Home = ({ children }: LayoutProps) => {
                     <Drawer
                         toggleDrawer={toggleDrawer}
                         direction='top'
+                        style={{
+                            lineHeight: 2
+                        }}
                     >
+                        <HeaderLink
+                            content='Quem somos'
+                            url='/'
+                            style={{
+                                color: theme.colors.title
+                            }}
+                        />
+                        <HeaderLink
+                            content='Soluções'
+                            url='/'
+                            style={{
+                                color: theme.colors.title
+                            }}
+                        />
+                        <HeaderLink
+                            content='Contato'
+                            url='/'
+                            style={{
+                                color: theme.colors.title
+                            }}
+                        />
 
                     </Drawer>
                 }
@@ -71,6 +97,20 @@ const Home = ({ children }: LayoutProps) => {
                         size='medium'
                     />
                 </HeaderLogoContainer>
+                <HeaderLinksContainer>
+                    <HeaderLink
+                        content='Quem somos'
+                        url='/'
+                    />
+                    <HeaderLink
+                        content='Soluções'
+                        url='/'
+                    />
+                    <HeaderLink
+                        content='Contato'
+                        url='/'
+                    />
+                </HeaderLinksContainer>
 
 
             </Header>

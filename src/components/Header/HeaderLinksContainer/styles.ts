@@ -2,10 +2,10 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
+  width: 100%;
   flex-direction: row;
   justify-content: center;
-  background-color: red;
   @media (max-width: 720px) {
-    flex-direction: column;
+    display: none;
   }
 `;
