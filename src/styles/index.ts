@@ -6,6 +6,18 @@ export const PageContainer = styled.div`
   width: 100%;
   overflow-x: hidden;
 
+  & .animated {
+    background-color: ${({ theme }) => theme.colors.primary_light};
+    position: fixed;
+    z-index: 999;
+    transition: all .3s ease;
+  }
+
+  & .normal {
+    background-color: ${({ theme }) => theme.colors.primary};
+    transition: all .3s ease;
+  }
+
   & header {
     background-color: ${({ theme }) => theme.colors.primary_light};
   }

@@ -1,16 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/Image'
-import { PrimaryButton } from '../components/PrimaryButton'
-import { Text } from '../components/Text'
-import { SubTitle } from '../components/SubTitle'
-import { Title } from '../components/Title'
+import { useTheme } from 'styled-components'
 
-import { RevealFade } from '../components/RevealFade'
-import { GroupInfo } from '../components/GroupInfo'
-import { MdDesignServices, MdOutlineFastForward, MdZoomOut } from 'react-icons/md'
-import { Section } from '../components/Section'
-import { Container } from '../components/Container'
 import {
   ColumnContainer,
   ContentContainer,
@@ -20,19 +12,20 @@ import {
   TitleContainer,
   TopSection
 } from '../styles'
-import { theme } from '../themes/theme'
-import { Footer } from '../components/Footer'
-import { FooterFirstSection } from '../components/Footer/FooterFirstSection'
-import { FooterLink } from '../components/Footer/FooterLink'
-import { FooterSecondSection } from '../components/Footer/FooterSecondSection'
-import { FooterTitle } from '../components/Footer/FooterTitle'
-import { FooterThirdSection } from '../components/Footer/FooterThirdSection'
-import { FooterFourthSection } from '../components/Footer/FooterFourthSection'
-import { SocialCollection } from '../components/SocialCollection'
-import { FooterBadge } from '../components/FooterBadge'
-import { Divider } from '../components/Divider'
+
+import { PrimaryButton } from '../components/PrimaryButton'
+import { Text } from '../components/Text'
+import { SubTitle } from '../components/SubTitle'
+import { Title } from '../components/Title'
+import { RevealFade } from '../components/RevealFade'
+import { GroupInfo } from '../components/GroupInfo'
+import { MdDesignServices, MdOutlineFastForward, MdZoomOut } from 'react-icons/md'
+import { Section } from '../components/Section'
 
 const Home: NextPage = () => {
+
+  const theme = useTheme()
+
   return (
     <PageContainer>
       <Head>

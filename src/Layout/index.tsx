@@ -1,5 +1,3 @@
-import Head from 'next/head'
-import Image from 'next/Image'
 import { Text } from '../components/Text'
 import { PageContainer, } from '../styles'
 import { theme } from '../themes/theme'
@@ -13,23 +11,69 @@ import { FooterFourthSection } from '../components/Footer/FooterFourthSection'
 import { SocialCollection } from '../components/SocialCollection'
 import { FooterBadge } from '../components/FooterBadge'
 import { Divider } from '../components/Divider'
-import { ReactNode } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
+import { Drawer } from '../components/Drawer'
+import { DrawerButton } from '../components/DrawerButton'
+import { HeaderLogoContainer } from '../components/Header/HeaderLogoContainer'
+import { Logo } from '../components/Logo'
+import { Header } from '../components/Header'
 
 interface LayoutProps {
     children: ReactNode
 }
 
 const Home = ({ children }: LayoutProps) => {
+
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false)
+    const [headerAnimation, setHeaderAnimation] = useState(false)
+
+    function toggleDrawer() {
+        setIsDrawerOpen(!isDrawerOpen)
+    }
+
+    function scrollAnimation() {
+        //@ts-ignore
+        const topPos = window.scrollY
+        console.log(topPos)
+        if (topPos > 20) {
+            setHeaderAnimation(true)
+        } else {
+            setHeaderAnimation(false)
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', scrollAnimation)
+        return () => window.removeEventListener('scroll', scrollAnimation)
+    }, [])
+
     return (
         <PageContainer>
-            <header>
-                <Image
-                    src="https://www.pablosilvadev.com.br/logo.svg"
-                    alt="psd-landing-page"
-                    width={48}
-                    height={48}
+            <Header
+                className={headerAnimation ? 'animated' : 'normal'}
+            >
+                {isDrawerOpen &&
+                    <Drawer
+                        toggleDrawer={toggleDrawer}
+                        direction='top'
+                    >
+
+                    </Drawer>
+                }
+                <DrawerButton
+                    toggleDrawer={toggleDrawer}
+
                 />
-            </header>
+
+                <HeaderLogoContainer>
+                    <Logo
+                        imageUrl='https://www.pablosilvadev.com.br/logo.svg'
+                        size='medium'
+                    />
+                </HeaderLogoContainer>
+
+
+            </Header>
             <main>{children}</main>
             <Footer>
                 <FooterFirstSection>
