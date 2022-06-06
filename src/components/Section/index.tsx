@@ -6,17 +6,30 @@ interface SectionProps {
     className?: string;
     children?: ReactNode;
     id: string;
+    minHeight?: string;
+    backgroundColor?: string;
+    justifyContent?: "center" | "flex-start" | "flex-end" | "space-between" | "space-around" | "space-evenly";
+    alignItems?: "center" | "flex-start" | "flex-end" | "space-between" | "space-around" | "space-evenly";
 }
 
 export function Section({
+    id,
+    minHeight,
+    backgroundColor,
+    justifyContent,
+    alignItems,
     style,
     className,
     children,
-    id
 }: SectionProps) {
     return (
         <Container
-            style={style}
+            style={style || {
+                backgroundColor: backgroundColor,
+                minHeight: minHeight,
+                alignItems: alignItems,
+                justifyContent: justifyContent,
+            }}
             className={className}
             id={id}
         >

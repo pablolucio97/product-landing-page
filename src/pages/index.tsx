@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/Image'
 import { PrimaryButton } from '../components/PrimaryButton'
+import { Text } from '../components/Text'
 import { SubTitle } from '../components/SubTitle'
 import { Title } from '../components/Title'
 
@@ -11,14 +12,21 @@ import { MdDesignServices, MdOutlineFastForward } from 'react-icons/md'
 import { Section } from '../components/Section'
 import { Container } from '../components/Container'
 import {
+  ColumnContainer,
   ContentContainer,
-  FirstFeatureSection,
+  LineContainer,
   PageContainer,
   PriceContainer,
-  SecondFeatureSection,
   TitleContainer,
   TopSection
- } from '../styles'
+} from '../styles'
+import { theme } from '../themes/theme'
+import { Footer } from '../components/Footer'
+import { FooterFirstSection } from '../components/Footer/FooterFirstSection'
+import { FooterLink } from '../components/Footer/FooterLink'
+import { FooterSecondSection } from '../components/Footer/FooterSecondSection'
+import { FooterTitle } from '../components/Footer/FooterTitle'
+import { FooterThirdSection } from '../components/Footer/FooterThirdSection'
 
 const Home: NextPage = () => {
   return (
@@ -34,6 +42,7 @@ const Home: NextPage = () => {
           height={48}
         />
       </header>
+
       <TopSection id="top-section">
         <ContentContainer>
           {/* eslint-disable-next-line*/}
@@ -62,7 +71,10 @@ const Home: NextPage = () => {
         </ContentContainer>
       </TopSection>
 
-      <FirstFeatureSection id="first-feature-section">
+      <Section
+        id="first-feature-section"
+        alignItems='center'
+      >
         <RevealFade>
           <ContentContainer>
             <TitleContainer>
@@ -101,11 +113,232 @@ const Home: NextPage = () => {
             </RevealFade>
           </ContentContainer>
         </RevealFade>
-      </FirstFeatureSection>
+      </Section>
 
-      <SecondFeatureSection id="second-feature-section">
+      <Section
+        id="second-feature-section"
+        backgroundColor={theme.colors.primary_dark}
+        minHeight='80vh'
+        justifyContent='space-evenly'
+      >
+        <ColumnContainer>
+          <Title
+            content='Isto é tudo o que você irá precisar'
+            className='titleLight'
+            style={{ width: 920, margin: 40 }}
+          />
+          <LineContainer>
+            <GroupInfo
+              title='Praticidade total'
+              content='Pensado para proporcionar total praticidade'
+              className='featureBadgeCard'
+              titleClassName='cardTitle'
+              contentClassName='cardSubTitle'
+            >
+              <MdOutlineFastForward size={24} />
+            </GroupInfo>
+            <GroupInfo
+              title='Praticidade total'
+              content='Pensado para proporcionar total praticidade'
+              className='featureBadgeCard'
+              titleClassName='cardTitle'
+              contentClassName='cardSubTitle'
+            >
+              <MdOutlineFastForward size={24} />
+            </GroupInfo>
+            <GroupInfo
+              title='Praticidade total'
+              content='Pensado para proporcionar total praticidade'
+              className='featureBadgeCard'
+              titleClassName='cardTitle'
+              contentClassName='cardSubTitle'
+            >
+              <MdOutlineFastForward size={24} />
+            </GroupInfo>
+          </LineContainer>
+          <LineContainer>
+            <GroupInfo
+              title='Praticidade total'
+              content='Pensado para proporcionar total praticidade'
+              className='featureBadgeCard'
+              titleClassName='cardTitle'
+              contentClassName='cardSubTitle'
+            >
+              <MdOutlineFastForward size={24} />
+            </GroupInfo>
+            <GroupInfo
+              title='Praticidade total'
+              content='Pensado para proporcionar total praticidade'
+              className='featureBadgeCard'
+              titleClassName='cardTitle'
+              contentClassName='cardSubTitle'
+            >
+              <MdOutlineFastForward size={24} />
+            </GroupInfo>
+          </LineContainer>
+          <LineContainer>
+            <GroupInfo
+              title='Praticidade total'
+              content='Pensado para proporcionar total praticidade'
+              className='featureBadgeCard'
+              titleClassName='cardTitle'
+              contentClassName='cardSubTitle'
+            >
+              <MdOutlineFastForward size={24} />
+            </GroupInfo>
+            <GroupInfo
+              title='Praticidade total'
+              content='Pensado para proporcionar total praticidade'
+              className='featureBadgeCard'
+              titleClassName='cardTitle'
+              contentClassName='cardSubTitle'
+            >
+              <MdOutlineFastForward size={24} />
+            </GroupInfo>
+            <GroupInfo
+              title='Praticidade total'
+              content='Pensado para proporcionar total praticidade'
+              className='featureBadgeCard'
+              titleClassName='cardTitle'
+              contentClassName='cardSubTitle'
+            >
+              <MdOutlineFastForward size={24} />
+            </GroupInfo>
+          </LineContainer>
+        </ColumnContainer>
+      </Section>
 
-      </SecondFeatureSection>
+      <Section
+        id='third-feature-section'
+        minHeight='80vh'
+        justifyContent='space-evenly'
+      >
+        <ColumnContainer>
+          <Title
+            content='Curta sua música'
+          />
+          <Text
+            content='Crie landing pages incríveis e personalizadas para seu produto. Comece hoje mesmo. Acesse www.pablosilvadev.com.br'
+            style={{
+              width: 800,
+              textAlign: 'center',
+              marginTop: 40,
+              marginBottom: 40
+            }}
+          />
+          <LineContainer
+            style={{
+              justifyContent: 'center',
+            }}
+          >
+            <Image
+              src="/person2.jpg"
+              alt="psd-landing-page"
+              width={620}
+              height={400}
+            />
+          </LineContainer>
+        </ColumnContainer>
+      </Section>
+
+      <Section
+        id='fourth-feature-section'
+        minHeight='50vh'
+        justifyContent='center'
+        backgroundColor={theme.colors.primary}
+      >
+        <LineContainer
+          style={{
+            justifyContent: "space-evenly",
+          }}
+        >
+          <Title
+            content='Curta cada batida. Garanta seu novo headphone.'
+            style={{
+              width: 560,
+              color: theme.colors.white
+            }}
+          />
+          <PrimaryButton
+            title='Comprar agora'
+            onClick={() => { }}
+            style={{
+              backgroundColor: theme.colors.secondary,
+              color: theme.colors.black
+            }}
+          />
+        </LineContainer>
+      </Section>
+      <Footer
+        style={{
+          backgroundColor: theme.colors.white,
+          fontWeight: 500
+        }}
+      >
+        <FooterFirstSection>
+          <FooterLink
+            url='/'
+            content='Páginas'
+            style={{
+              color: theme.colors.black,
+              fontWeight: 500,
+              fontSize: theme.sizes.xlarge
+            }}
+          />
+        </FooterFirstSection>
+        <FooterSecondSection>
+          <FooterTitle
+            content='About'
+            style={{
+              color: theme.colors.black,
+              fontWeight: 500,
+              fontSize: theme.sizes.large
+            }}
+          />
+          <FooterLink
+            url='/'
+            content='Nossa missão'
+            style={{
+              color: theme.colors.black,
+              fontWeight: 300,
+            }}
+          />
+          <FooterLink
+            url='/'
+            content='Nossa história'
+            style={{
+              color: theme.colors.black,
+              fontWeight: 300,
+            }}
+          />
+        </FooterSecondSection>
+        <FooterThirdSection>
+          <FooterTitle
+            content='About'
+            style={{
+              color: theme.colors.black,
+              fontWeight: 500,
+              fontSize: theme.sizes.large
+            }}
+          />
+          <FooterLink
+            url='/'
+            content='Nossa missão'
+            style={{
+              color: theme.colors.black,
+              fontWeight: 300,
+            }}
+          />
+          <FooterLink
+            url='/'
+            content='Nossa história'
+            style={{
+              color: theme.colors.black,
+              fontWeight: 300,
+            }}
+          />
+        </FooterThirdSection>
+      </Footer>
 
     </PageContainer>
   )

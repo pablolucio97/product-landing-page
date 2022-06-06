@@ -41,6 +41,16 @@ export const PageContainer = styled.div`
     margin: 8px 0;
   }
 
+  .featureBadgeCard {
+    border: 1px solid ${({ theme }) => theme.colors.silver};
+    background: ${({ theme }) => theme.colors.white};
+    border-radius: 8px;
+    width: 320px;
+    padding: 8px;
+    height: 120px;
+    margin: 8px 40px;
+  }
+
   .cardTitle {
     font-size: 24px;
     color: ${({ theme }) => theme.colors.black};
@@ -50,6 +60,23 @@ export const PageContainer = styled.div`
     font-size: 16px;
     color: ${({ theme }) => theme.colors.text};
   }
+`;
+
+export const LineContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+`;
+
+export const ColumnContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const TopSection = styled.section`
@@ -87,24 +114,9 @@ export const PriceContainer = styled.div`
     text-decoration: line-through;
   }
 
-  & button{
+  & button {
     background-color: ${({ theme }) => theme.colors.secondary};
     color: ${({ theme }) => theme.colors.title};
     margin-top: 12px;
   }
-`;
-
-export const FirstFeatureSection = styled.section`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  min-height: 100vh;
-  background-color: ${({ theme }) => theme.colors.white};
-`;
-
-export const SecondFeatureSection = styled.section`
-  width: 100%;
-  display: flex;
-  min-height: 100vh;
-  background-color: ${({ theme }) => theme.colors.primary_dark};
 `;
