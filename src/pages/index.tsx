@@ -38,15 +38,6 @@ const Home: NextPage = () => {
       <Head>
         <title>Landing</title>
       </Head>
-      <header>
-        <Image
-          src="https://www.pablosilvadev.com.br/logo.svg"
-          alt="psd-landing-page"
-          width={48}
-          height={48}
-        />
-      </header>
-
       <TopSection id="top-section">
         <ContentContainer>
           {/* eslint-disable-next-line*/}
@@ -273,109 +264,6 @@ const Home: NextPage = () => {
           />
         </LineContainer>
       </Section>
-      <Footer>
-        <FooterFirstSection>
-          <FooterTitle
-            content='Sobre nós'
-            style={{
-              color: theme.colors.black,
-              fontWeight: 500,
-            }}
-          />
-          <FooterLink
-            url='/'
-            content='Nossa missão'
-            style={{
-              color: theme.colors.black,
-              fontWeight: 300,
-            }}
-          />
-          <FooterLink
-            url='/'
-            content='Nossa história'
-            style={{
-              color: theme.colors.black,
-              fontWeight: 300,
-            }}
-          />
-        </FooterFirstSection>
-        <FooterSecondSection>
-          <FooterTitle
-            content='Soluções'
-            style={{
-              color: theme.colors.black,
-              fontWeight: 500,
-            }}
-          />
-          <FooterLink
-            url='/'
-            content='Landing Pages'
-            style={{
-              color: theme.colors.black,
-              fontWeight: 300,
-            }}
-          />
-          <FooterLink
-            url='/'
-            content='Sites institucionais'
-            style={{
-              color: theme.colors.black,
-              fontWeight: 300,
-            }}
-          />
-        </FooterSecondSection>
-        <FooterThirdSection>
-          <FooterTitle
-            content='Nossas redes'
-            style={{
-              color: theme.colors.black,
-              fontWeight: 500,
-            }}
-          />
-          <SocialCollection
-            linkedinUrl='/'
-            youtubeUrl='/'
-            facebookUrl='/'
-            githubUrl='/'
-            twitterUrl='/'
-            instagramUrl='/'
-          />
-        </FooterThirdSection>
-        <FooterFourthSection>
-          <FooterTitle
-            content='Links úteis'
-            style={{
-              color: theme.colors.black,
-              fontWeight: 500,
-            }}
-          />
-          <FooterLink
-            url='/'
-            content='Política de privacidade'
-            style={{
-              color: theme.colors.black,
-              fontWeight: 300,
-            }}
-          />
-          <FooterLink
-            url='/'
-            content='Termos de uso'
-            style={{
-              color: theme.colors.black,
-              fontWeight: 300,
-            }}
-          />
-        </FooterFourthSection>
-      </Footer>
-      <FooterBadge>
-        <Divider />
-        <Text
-          content='PabloSilvaDev - 2022 - CNPJ 9834 9332'
-          style={{
-            fontSize: 10
-          }}
-        />
-      </FooterBadge>
     </PageContainer>
   )
 }
