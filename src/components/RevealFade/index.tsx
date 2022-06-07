@@ -20,8 +20,8 @@ export function RevealFade({
     return (
         <Fade
             left={left}
-            right={right}
             top={top}
+            right={right}
             bottom={bottom}
         >
             {children}
