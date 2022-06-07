@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+//@ts-ignore
 import Zoom from 'react-reveal/Zoom'
 
 interface ZoomReveal {
