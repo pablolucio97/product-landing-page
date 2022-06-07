@@ -19,6 +19,8 @@ import { Logo } from '../components/Logo'
 import { Header } from '../components/Header'
 import { HeaderLinksContainer } from '../components/Header/HeaderLinksContainer'
 import { HeaderLink } from '../components/Header/HeaderLink'
+import { TopScrollButton } from '../components/TopScrollButton'
+import { MdArrowUpward } from 'react-icons/md'
 
 interface LayoutProps {
     children: ReactNode
@@ -28,12 +30,13 @@ const Home = ({ children }: LayoutProps) => {
 
     const [isDrawerOpen, setIsDrawerOpen] = useState(false)
     const [headerAnimation, setHeaderAnimation] = useState(false)
+    const [scrollTopAnimation, setScrollTopAnimation] = useState(false)
 
     function toggleDrawer() {
         setIsDrawerOpen(!isDrawerOpen)
     }
 
-    function scrollAnimation() {
+    function scrollscrollsAnimation() {
         //@ts-ignore
         const topPos = window.scrollY
         console.log(topPos)
@@ -44,16 +47,38 @@ const Home = ({ children }: LayoutProps) => {
         }
     }
 
+    function scrollTopScrollButtonAnimation() {
+        //@ts-ignore
+        const topPos = window.scrollY
+        console.log(topPos)
+        if (topPos > 500) {
+            setScrollTopAnimation(true)
+        } else {
+            setScrollTopAnimation(false)
+        }
+    }
+
+
+    function callAnimations() {
+        scrollTopScrollButtonAnimation()
+        scrollscrollsAnimation()
+    }
+
     useEffect(() => {
-        window.addEventListener('scroll', scrollAnimation)
-        return () => window.removeEventListener('scroll', scrollAnimation)
+        window.addEventListener('scroll', callAnimations)
+        return () => window.removeEventListener('scroll', callAnimations)
     }, [])
 
 
     return (
-        <PageContainer>
+        <PageContainer id='top'>
+            <TopScrollButton
+                className={scrollTopAnimation ? 'animatedTopScroll' : 'normalTopScroll'}
+                icon={<MdArrowUpward />}
+                elementReferenceId='top'
+            />
             <Header
-                className={headerAnimation ? 'animated' : 'normal'}
+                className={headerAnimation ? 'animatedHeader' : 'normalHeader'}
             >
                 {isDrawerOpen &&
                     <Drawer
@@ -97,8 +122,11 @@ const Home = ({ children }: LayoutProps) => {
 
                 <HeaderLogoContainer>
                     <Logo
-                        imageUrl='https://www.pablosilvadev.com.br/logo.svg'
-                        size='medium'
+                        imageUrl='/logo.png'
+                        style={{
+                            width: 56,
+                            height: 56
+                        }}
                     />
                 </HeaderLogoContainer>
                 <HeaderLinksContainer>

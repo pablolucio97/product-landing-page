@@ -38,7 +38,7 @@ const Home: NextPage = () => {
   return (
     <PageContainer>
       <Head>
-        <title>Landing</title>
+        <title>PSD - Landing Page</title>
       </Head>
 
       <FirstSection id="top-section">

@@ -6,15 +6,24 @@ export const PageContainer = styled.div`
   width: 100%;
   overflow-x: hidden;
 
-  & .animated {
+  & .animatedHeader {
     background-color: ${({ theme }) => theme.colors.primary_light};
     position: fixed;
     z-index: 999;
     transition: all 0.3s ease;
   }
 
-  & .normal {
+  & .normalHeader {
     background-color: ${({ theme }) => theme.colors.primary};
+    transition: all 0.3s ease;
+  }
+  & .animatedTopScroll {
+    right: 24px;
+    transition: all 0.3s ease;
+  }
+
+  & .normalTopScroll {
+    right: -80px;
     transition: all 0.3s ease;
   }
 
