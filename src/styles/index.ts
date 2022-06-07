@@ -124,10 +124,6 @@ export const FirstSection = styled.section`
     flex-direction: column;
     margin: 0 auto;
     align-items: center;
-    & img {
-      width: 64%;
-      margin-top: 40px;
-    }
   }
 `;
 export const SecondSection = styled.section`
@@ -179,7 +175,7 @@ export const FourthSection = styled.section`
   }
 `;
 
-export const FivethSection = styled.section`
+export const FifthSection = styled.section`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -303,7 +299,7 @@ export const FirstSectionColumnContainer = styled.div`
     }
   }
   & h1 {
-    width: 720px;
+    width: 80%;
     @media (max-width: 1080px) {
       width: 640px;
     }

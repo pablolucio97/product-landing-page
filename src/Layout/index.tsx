@@ -49,6 +49,7 @@ const Home = ({ children }: LayoutProps) => {
         return () => window.removeEventListener('scroll', scrollAnimation)
     }, [])
 
+
     return (
         <PageContainer>
             <Header
@@ -65,12 +66,14 @@ const Home = ({ children }: LayoutProps) => {
                         <HeaderLink
                             content='Quem somos'
                             url='/'
+                            onClick={toggleDrawer}
                             style={{
                                 color: theme.colors.title
                             }}
                         />
                         <HeaderLink
                             content='Soluções'
+                            onClick={toggleDrawer}
                             url='/'
                             style={{
                                 color: theme.colors.title
@@ -78,6 +81,7 @@ const Home = ({ children }: LayoutProps) => {
                         />
                         <HeaderLink
                             content='Contato'
+                            onClick={toggleDrawer}
                             url='/'
                             style={{
                                 color: theme.colors.title

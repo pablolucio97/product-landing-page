@@ -6,7 +6,7 @@ import {
     FaLinkedin,
     FaTwitterSquare,
     FaYoutubeSquare
- } from 'react-icons/fa';
+} from 'react-icons/fa';
 import { useTheme } from 'styled-components';
 import { Button, Container } from './styles';
 
@@ -33,7 +33,7 @@ export function SocialCollection({
     const theme = useTheme()
 
     function openExternUrl(url: string) {
-        window.location.href = url
+        return window.open(url, "_blank");
     }
 
     return (

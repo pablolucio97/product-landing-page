@@ -4,24 +4,22 @@ import {
   Md2KPlus, MdCellWifi, MdDesignServices, MdFollowTheSigns, MdOutlineFastForward,
   MdZoomOut
 } from 'react-icons/md'
-import { useTheme } from 'styled-components'
 import { GroupInfo } from '../components/GroupInfo'
 import { HeroTitle } from '../components/HeroTitle'
 import { NextImage } from '../components/NextImage'
 import { PrimaryButton } from '../components/PrimaryButton'
 import { RevealFade } from '../components/RevealFade'
 import { RevealZoom } from '../components/RevealZoom'
-import { Section } from '../components/Section'
 import { SubTitle } from '../components/SubTitle'
 import { Text } from '../components/Text'
 import { Title } from '../components/Title'
 import {
-  ColumnContainer,
-  FirstSection, FirstSectionLineContainer, FirstSectionColumnContainer, LineContainer,
+  FirstSection,
+  FirstSectionLineContainer,
+  FirstSectionColumnContainer,
   PageContainer,
   PriceCard,
   SecondSection,
-
   ThirdSection,
   SecondSectionColumnContainer,
   SecondSectionLineContainer,
@@ -30,16 +28,12 @@ import {
   FourthSection,
   FourthSectionColumnContainer,
   FourthSectionLineContainer,
-  FivethSection,
   FifthSectionLineContainer,
+  FifthSection,
 
 } from '../styles'
 
-
-
 const Home: NextPage = () => {
-
-  const theme = useTheme()
 
   return (
     <PageContainer>
@@ -244,7 +238,7 @@ const Home: NextPage = () => {
         </FourthSectionColumnContainer>
       </FourthSection>
 
-      <FivethSection>
+      <FifthSection>
         <FifthSectionLineContainer>
           <Title
             content='Curta cada batida. Garanta seu novo headphone.'
@@ -254,7 +248,7 @@ const Home: NextPage = () => {
             onClick={() => { }}
           />
         </FifthSectionLineContainer>
-      </FivethSection>
+      </FifthSection>
     </PageContainer>
   )
 }
