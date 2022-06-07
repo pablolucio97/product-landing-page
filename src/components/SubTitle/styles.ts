@@ -9,5 +9,7 @@ export const SubTitle = styled.h3`
   }
   @media (max-width: 720px) {
     font-size: ${({ theme }) => theme.sizes.large};
+    max-width: 92%;
+    text-align: center;
   }
 `;

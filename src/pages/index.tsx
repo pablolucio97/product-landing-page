@@ -1,26 +1,41 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/Image'
+import {
+  Md2KPlus, MdCellWifi, MdDesignServices, MdFollowTheSigns, MdOutlineFastForward,
+  MdZoomOut
+} from 'react-icons/md'
 import { useTheme } from 'styled-components'
-
+import { GroupInfo } from '../components/GroupInfo'
+import { HeroTitle } from '../components/HeroTitle'
+import { NextImage } from '../components/NextImage'
+import { PrimaryButton } from '../components/PrimaryButton'
+import { RevealFade } from '../components/RevealFade'
+import { RevealZoom } from '../components/RevealZoom'
+import { Section } from '../components/Section'
+import { SubTitle } from '../components/SubTitle'
+import { Text } from '../components/Text'
+import { Title } from '../components/Title'
 import {
   ColumnContainer,
-  ContentContainer,
-  LineContainer,
+  FirstSection, FirstSectionLineContainer, FirstSectionColumnContainer, LineContainer,
   PageContainer,
-  PriceContainer,
-  TitleContainer,
-  TopSection
+  PriceCard,
+  SecondSection,
+
+  ThirdSection,
+  SecondSectionColumnContainer,
+  SecondSectionLineContainer,
+  ThirdSectionColumnContainer,
+  ThirdSectionLineContainer,
+  FourthSection,
+  FourthSectionColumnContainer,
+  FourthSectionLineContainer,
+  FivethSection,
+  FifthSectionLineContainer,
+
 } from '../styles'
 
-import { PrimaryButton } from '../components/PrimaryButton'
-import { Text } from '../components/Text'
-import { SubTitle } from '../components/SubTitle'
-import { Title } from '../components/Title'
-import { RevealFade } from '../components/RevealFade'
-import { GroupInfo } from '../components/GroupInfo'
-import { MdDesignServices, MdOutlineFastForward, MdZoomOut } from 'react-icons/md'
-import { Section } from '../components/Section'
+
 
 const Home: NextPage = () => {
 
@@ -31,49 +46,54 @@ const Home: NextPage = () => {
       <Head>
         <title>Landing</title>
       </Head>
-      <TopSection id="top-section">
-        <ContentContainer>
-          {/* eslint-disable-next-line*/}
-          <img src="/phone.png" alt="psd" width={400} />
-          <TitleContainer>
-            <Title
-              content='Curta cada momento com o super headphone'
-              className='titleLight'
-            />
-            <SubTitle
-              content='Para Iphone ou android. Não importa a plataforma, temos o produto certo para você.'
-              className='subtitleLight'
-            />
-            <PriceContainer>
-              <h1>R$ 299,99</h1>
-              <SubTitle
-                content='Preço original: R$ 399,99'
-                className='subtitleLight'
-              />
-              <PrimaryButton
-                title='Comprar agora'
-                onClick={() => { }}
-              />
-            </PriceContainer>
-          </TitleContainer>
-        </ContentContainer>
-      </TopSection>
 
-      <Section
-        id="first-feature-section"
-        alignItems='center'
+      <FirstSection id="top-section">
+        <FirstSectionLineContainer>
+          <RevealZoom>
+            <NextImage
+              url='/phone.png'
+              width={400}
+              height={600}
+            />
+          </RevealZoom>
+          <RevealFade
+            bottom
+          >
+            <FirstSectionColumnContainer>
+              <HeroTitle
+                content='Curta cada momento com o super headphone'
+                className='heroTitleLight'
+              />
+              <SubTitle
+                content='Para Iphone ou android. Não importa a plataforma, temos o produto certo para você.'
+              />
+              <PriceCard>
+                <h1>R$ 299,99</h1>
+                <SubTitle
+                  content='Preço original: R$ 399,99'
+                />
+                <PrimaryButton
+                  title='Comprar agora'
+                  onClick={() => { }}
+                />
+              </PriceCard>
+            </FirstSectionColumnContainer>
+          </RevealFade>
+        </FirstSectionLineContainer>
+      </FirstSection>
+
+      <SecondSection
+        id="second-section"
       >
         <RevealFade>
-          <ContentContainer>
-            <TitleContainer>
+          <SecondSectionLineContainer>
+            <SecondSectionColumnContainer>
               <Title
                 content='Curta cada momento com o super headphone'
-                className='titleDark'
               />
               <SubTitle
                 content='Para Iphone ou android. Não importa a plataforma, temos o produto certo para você.'
                 className='subtitleDark'
-                style={{ marginTop: 12, marginBottom: 12 }}
               />
               <GroupInfo
                 title='Desgin exclusivo'
@@ -93,170 +113,148 @@ const Home: NextPage = () => {
               >
                 <MdOutlineFastForward size={24} />
               </GroupInfo>
-            </TitleContainer>
+            </SecondSectionColumnContainer>
             <RevealFade
               right
             >
-              <img src="/phone2.png" alt="psd" />
+              <NextImage
+                url="/phone2.png"
+                width={300}
+                height={300}
+              />
             </RevealFade>
-          </ContentContainer>
+          </SecondSectionLineContainer>
         </RevealFade>
-      </Section>
+      </SecondSection>
 
-      <Section
-        id="second-feature-section"
-        backgroundColor={theme.colors.primary_dark}
-        minHeight='80vh'
-        justifyContent='space-evenly'
+      <ThirdSection
+        id="third-section"
       >
-        <ColumnContainer>
+        <ThirdSectionColumnContainer>
           <Title
-            content='Isto é tudo o que você irá precisar'
-            className='titleLight'
-            style={{ width: 920, margin: 40 }}
+            content='Curta cada momento com o super headphone'
           />
-          <LineContainer>
-            <GroupInfo
-              title='Praticidade total'
-              content='Pensado para proporcionar total praticidade'
-              className='featureBadgeCard'
-              titleClassName='cardTitle'
-              contentClassName='cardSubTitle'
-            >
-              <MdOutlineFastForward size={24} />
-            </GroupInfo>
-            <GroupInfo
-              title='Praticidade total'
-              content='Pensado para proporcionar total praticidade'
-              className='featureBadgeCard'
-              titleClassName='cardTitle'
-              contentClassName='cardSubTitle'
-            >
-              <MdOutlineFastForward size={24} />
-            </GroupInfo>
-            <GroupInfo
-              title='Praticidade total'
-              content='Pensado para proporcionar total praticidade'
-              className='featureBadgeCard'
-              titleClassName='cardTitle'
-              contentClassName='cardSubTitle'
-            >
-              <MdOutlineFastForward size={24} />
-            </GroupInfo>
-          </LineContainer>
-          <LineContainer>
-            <GroupInfo
-              title='Praticidade total'
-              content='Pensado para proporcionar total praticidade'
-              className='featureBadgeCard'
-              titleClassName='cardTitle'
-              contentClassName='cardSubTitle'
-            >
-              <MdOutlineFastForward size={24} />
-            </GroupInfo>
-            <GroupInfo
-              title='Praticidade total'
-              content='Pensado para proporcionar total praticidade'
-              className='featureBadgeCard'
-              titleClassName='cardTitle'
-              contentClassName='cardSubTitle'
-            >
-              <MdOutlineFastForward size={24} />
-            </GroupInfo>
-          </LineContainer>
-          <LineContainer>
-            <GroupInfo
-              title='Praticidade total'
-              content='Pensado para proporcionar total praticidade'
-              className='featureBadgeCard'
-              titleClassName='cardTitle'
-              contentClassName='cardSubTitle'
-            >
-              <MdOutlineFastForward size={24} />
-            </GroupInfo>
-            <GroupInfo
-              title='Praticidade total'
-              content='Pensado para proporcionar total praticidade'
-              className='featureBadgeCard'
-              titleClassName='cardTitle'
-              contentClassName='cardSubTitle'
-            >
-              <MdOutlineFastForward size={24} />
-            </GroupInfo>
-            <GroupInfo
-              title='Praticidade total'
-              content='Pensado para proporcionar total praticidade'
-              className='featureBadgeCard'
-              titleClassName='cardTitle'
-              contentClassName='cardSubTitle'
-            >
-              <MdOutlineFastForward size={24} />
-            </GroupInfo>
-          </LineContainer>
-        </ColumnContainer>
-      </Section>
+          <RevealFade>
+            <ThirdSectionLineContainer>
+              <GroupInfo
+                title='Praticidade total'
+                content='Pensado para proporcionar total praticidade'
+                className='featureBadgeCard'
+                titleClassName='cardTitle'
+                contentClassName='cardSubTitle'
+              >
+                <MdOutlineFastForward size={24} className='icon' />
+              </GroupInfo>
+              <GroupInfo
+                title='Praticidade total'
+                content='Pensado para proporcionar total praticidade'
+                className='featureBadgeCard'
+                titleClassName='cardTitle'
+                contentClassName='cardSubTitle'
+              >
+                <MdZoomOut size={24} className='icon' />
+              </GroupInfo>
+              <GroupInfo
+                title='Praticidade total'
+                content='Pensado para proporcionar total praticidade'
+                className='featureBadgeCard'
+                titleClassName='cardTitle'
+                contentClassName='cardSubTitle'
+              >
+                <Md2KPlus size={24} className='icon' />
+              </GroupInfo>
+            </ThirdSectionLineContainer>
+          </RevealFade>
+          <RevealFade>
+            <ThirdSectionLineContainer>
+              <GroupInfo
+                title='Praticidade total'
+                content='Pensado para proporcionar total praticidade'
+                className='featureBadgeCard'
+                titleClassName='cardTitle'
+                contentClassName='cardSubTitle'
+              >
+                <MdFollowTheSigns size={24} className='icon' />
+              </GroupInfo>
+              <GroupInfo
+                title='Praticidade total'
+                content='Pensado para proporcionar total praticidade'
+                className='featureBadgeCard'
+                titleClassName='cardTitle'
+                contentClassName='cardSubTitle'
+              >
+                <MdCellWifi size={24} className='icon' />
+              </GroupInfo>
+            </ThirdSectionLineContainer>
+          </RevealFade>
+          <RevealFade>
+            <ThirdSectionLineContainer>
+              <GroupInfo
+                title='Praticidade total'
+                content='Pensado para proporcionar total praticidade'
+                className='featureBadgeCard'
+                titleClassName='cardTitle'
+                contentClassName='cardSubTitle'
+              >
+                <MdOutlineFastForward size={24} className='icon' />
+              </GroupInfo>
+              <GroupInfo
+                title='Praticidade total'
+                content='Pensado para proporcionar total praticidade'
+                className='featureBadgeCard'
+                titleClassName='cardTitle'
+                contentClassName='cardSubTitle'
+              >
+                <MdOutlineFastForward size={24} className='icon' />
+              </GroupInfo>
+              <GroupInfo
+                title='Praticidade total'
+                content='Pensado para proporcionar total praticidade'
+                className='featureBadgeCard'
+                titleClassName='cardTitle'
+                contentClassName='cardSubTitle'
+              >
+                <MdOutlineFastForward size={24} className='icon' />
+              </GroupInfo>
+            </ThirdSectionLineContainer>
+          </RevealFade>
+        </ThirdSectionColumnContainer>
+      </ThirdSection>
 
-      <Section
-        id='third-feature-section'
-        minHeight='80vh'
-        justifyContent='space-evenly'
+      <FourthSection
+        id='fourth-section'
       >
-        <ColumnContainer>
+        <FourthSectionColumnContainer>
           <Title
             content='Curta sua música'
           />
           <Text
             content='Crie landing pages incríveis e personalizadas para seu produto. Comece hoje mesmo. Acesse www.pablosilvadev.com.br'
-            style={{
-              width: 800,
-              textAlign: 'center',
-              marginTop: 40,
-              marginBottom: 40
-            }}
           />
-          <LineContainer
-            style={{
-              justifyContent: 'center',
-            }}
+          <FourthSectionLineContainer
           >
-            <Image
-              src="/person2.jpg"
-              alt="psd-landing-page"
-              width={620}
-              height={400}
-            />
-          </LineContainer>
-        </ColumnContainer>
-      </Section>
+            <RevealZoom>
+              <NextImage
+                url="/person2.jpg"
+                width={620}
+                height={400}
+              />
+            </RevealZoom>
+          </FourthSectionLineContainer>
+        </FourthSectionColumnContainer>
+      </FourthSection>
 
-      <Section
-        id='fourth-feature-section'
-        minHeight='50vh'
-        justifyContent='center'
-        backgroundColor={theme.colors.primary}
-      >
-        <LineContainer
-          style={{
-            justifyContent: "space-evenly",
-          }}
-        >
+      <FivethSection>
+        <FifthSectionLineContainer>
           <Title
             content='Curta cada batida. Garanta seu novo headphone.'
-            style={{
-              width: 560,
-              color: theme.colors.white
-            }}
           />
           <PrimaryButton
             title='Comprar agora'
             onClick={() => { }}
-            style={{
-              backgroundColor: theme.colors.secondary,
-              color: theme.colors.black
-            }}
           />
-        </LineContainer>
-      </Section>
+        </FifthSectionLineContainer>
+      </FivethSection>
     </PageContainer>
   )
 }

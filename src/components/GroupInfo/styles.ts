@@ -29,7 +29,7 @@ export const Text = styled.span`
   @media (max-width: 720px) {
     font-size: ${({ theme }) => theme.sizes.medium};
   }
-`;
+  `;
 
 export const Title = styled.h3`
   font-size: ${({ theme }) => theme.sizes.xxlarge};
