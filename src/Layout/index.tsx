@@ -21,6 +21,7 @@ import { HeaderLinksContainer } from '../components/Header/HeaderLinksContainer'
 import { HeaderLink } from '../components/Header/HeaderLink'
 import { TopScrollButton } from '../components/TopScrollButton'
 import { MdArrowUpward } from 'react-icons/md'
+import { PrimaryButton } from '../components/PrimaryButton'
 
 interface LayoutProps {
     children: ReactNode
@@ -89,30 +90,20 @@ const Home = ({ children }: LayoutProps) => {
                         }}
                     >
                         <HeaderLink
-                            content='Quem somos'
-                            url='/'
+                            content='Recursos'
+                            url='#recursos'
                             onClick={toggleDrawer}
                             style={{
                                 color: theme.colors.title
                             }}
                         />
-                        <HeaderLink
-                            content='Soluções'
+                        <PrimaryButton
+                            title='Adquirir produto'
                             onClick={toggleDrawer}
-                            url='/'
                             style={{
-                                color: theme.colors.title
+                                color: theme.colors.white
                             }}
                         />
-                        <HeaderLink
-                            content='Contato'
-                            onClick={toggleDrawer}
-                            url='/'
-                            style={{
-                                color: theme.colors.title
-                            }}
-                        />
-
                     </Drawer>
                 }
                 <DrawerButton
@@ -121,26 +112,24 @@ const Home = ({ children }: LayoutProps) => {
                 />
 
                 <HeaderLogoContainer>
-                    <Logo
-                        imageUrl='/logo.png'
-                        style={{
-                            width: 56,
-                            height: 56
-                        }}
+                <Logo
+                        imageUrl='/logo.svg'
+                        size={headerAnimation ? 'small' : 'medium'}
                     />
                 </HeaderLogoContainer>
                 <HeaderLinksContainer>
                     <HeaderLink
-                        content='Quem somos'
-                        url='/'
+                        content='Recursos'
+                        url='#recursos'
+                        onClick={() => setIsDrawerOpen(false)}
                     />
-                    <HeaderLink
-                        content='Soluções'
-                        url='/'
-                    />
-                    <HeaderLink
-                        content='Contato'
-                        url='/'
+                    <PrimaryButton
+                        title='Adquirir produto'
+                        onClick={() => setIsDrawerOpen(false)}
+                        style={{
+                            color: theme.colors.black,
+                            background: theme.colors.secondary
+                        }}
                     />
                 </HeaderLinksContainer>
 
@@ -175,7 +164,7 @@ const Home = ({ children }: LayoutProps) => {
                 </FooterFirstSection>
                 <FooterSecondSection>
                     <FooterTitle
-                        content='Soluções'
+                        content='Produtos'
                         style={{
                             color: theme.colors.black,
                             fontWeight: 500,
@@ -183,15 +172,7 @@ const Home = ({ children }: LayoutProps) => {
                     />
                     <FooterLink
                         url='/'
-                        content='Landing Pages'
-                        style={{
-                            color: theme.colors.black,
-                            fontWeight: 300,
-                        }}
-                    />
-                    <FooterLink
-                        url='/'
-                        content='Sites institucionais'
+                        content='Todos os produtos'
                         style={{
                             color: theme.colors.black,
                             fontWeight: 300,
@@ -208,10 +189,7 @@ const Home = ({ children }: LayoutProps) => {
                     />
                     <SocialCollection
                         linkedinUrl='/'
-                        youtubeUrl='/'
-                        facebookUrl='/'
                         githubUrl='/'
-                        twitterUrl='/'
                         instagramUrl='/'
                     />
                 </FooterThirdSection>
@@ -244,7 +222,7 @@ const Home = ({ children }: LayoutProps) => {
             <FooterBadge>
                 <Divider />
                 <Text
-                    content='PabloSilvaDev - 2022 - CNPJ 9834 9332'
+                    content='PabloSilvaDev - © Copyright 2022'
                     style={{
                         fontSize: 10
                     }}

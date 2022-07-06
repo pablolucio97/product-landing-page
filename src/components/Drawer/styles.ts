@@ -42,6 +42,7 @@ export const MenuContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: center;
   padding-top: 40px;
   position: relative;
   padding: 40px 24px;
@@ -62,6 +63,8 @@ export const MenuItem = styled.a`
 
 export const CloseMenuButton = styled.button`
   display: flex;
+  position: absolute;
+  right: 40px;
   justify-content: center;
   align-items: center;
   width: 20px;

@@ -16,6 +16,7 @@ export const PageContainer = styled.div`
   & .normalHeader {
     background-color: ${({ theme }) => theme.colors.primary};
     transition: all 0.3s ease;
+    padding: 24px 0;
   }
   & .animatedTopScroll {
     right: 24px;
@@ -82,8 +83,8 @@ export const PageContainer = styled.div`
       margin: 8px;
     }
     @media (max-width: 720px) {
-      width: 96%;
-      height: 80px;
+      width: 88%;
+      min-height: 80px;
       padding: 24px;
     }
 
@@ -133,13 +134,14 @@ export const FirstSection = styled.section`
     flex-direction: column;
     margin: 0 auto;
     align-items: center;
+    padding: 0;
   }
 `;
 export const SecondSection = styled.section`
   width: 100%;
   display: flex;
   justify-content: center;
-  min-height: 90vh;
+  min-height: 56vh;
   margin: 0 auto;
   padding: 40px;
   background-color: ${({ theme }) => theme.colors.white};
@@ -148,9 +150,30 @@ export const SecondSection = styled.section`
     align-items: center;
   }
   @media (max-width: 720px) {
-    height: 50vh;
+    min-height: 56vh;
+    padding: 0;
   }
 `;
+
+export const SecondSectionFeaturesContainer = styled.div`
+  display: flex;
+  width: 100%;
+  @media (max-width: 720px){
+    flex-direction: column;
+   
+  }
+`
+export const SecondSectionCardsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-bottom: 24px;
+  @media (max-width: 720px){
+    width: 100%;
+    align-items: center;
+  }
+`
+
 export const ThirdSection = styled.section`
   width: 100%;
   display: flex;
@@ -225,10 +248,9 @@ export const FirstSectionLineContainer = styled.div`
 `;
 export const SecondSectionLineContainer = styled.div`
   display: flex;
-  margin: 120px auto;
+  margin: 40px auto;
   @media (max-width: 1080px) {
     flex-direction: column;
-    margin: 120px auto;
     align-items: center;
   }
 
@@ -329,8 +351,10 @@ export const SecondSectionColumnContainer = styled.div`
     align-items: center;
   }
 
-  & h3 {
-    color: ${({ theme }) => theme.colors.white};
+  & h5{
+    margin: 0 auto;
+    width: 80%;
+    color: ${({ theme }) => theme.colors.black};
   }
 `;
 
@@ -368,7 +392,7 @@ export const FourthSectionColumnContainer = styled.div`
   & p {
     width: 640px;
     text-align: center;
-    margin: 40px auto 16px;
+    margin: 24px auto -12px;
     @media (max-width: 720px) {
       width: 80%;
     }

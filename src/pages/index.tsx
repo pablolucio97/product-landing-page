@@ -1,8 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import {
-  Md2KPlus, MdCellWifi, MdDesignServices, MdFollowTheSigns, MdOutlineFastForward,
-  MdZoomOut
+  MdDesignServices,
+  MdOutlineFastForward,
 } from 'react-icons/md'
 import { GroupInfo } from '../components/GroupInfo'
 import { HeroTitle } from '../components/HeroTitle'
@@ -13,6 +13,7 @@ import { RevealZoom } from '../components/RevealZoom'
 import { SubTitle } from '../components/SubTitle'
 import { Text } from '../components/Text'
 import { Title } from '../components/Title'
+import { features } from '../data/data'
 import {
   FirstSection,
   FirstSectionLineContainer,
@@ -30,6 +31,8 @@ import {
   FourthSectionLineContainer,
   FifthSectionLineContainer,
   FifthSection,
+  SecondSectionFeaturesContainer,
+  SecondSectionCardsContainer,
 
 } from '../styles'
 
@@ -40,7 +43,6 @@ const Home: NextPage = () => {
       <Head>
         <title>PSD - Landing Page</title>
       </Head>
-
       <FirstSection id="top-section">
         <FirstSectionLineContainer>
           <RevealZoom>
@@ -75,7 +77,6 @@ const Home: NextPage = () => {
           </RevealFade>
         </FirstSectionLineContainer>
       </FirstSection>
-
       <SecondSection
         id="second-section"
       >
@@ -86,130 +87,91 @@ const Home: NextPage = () => {
                 content='Curta cada momento com o super headphone'
               />
               <SubTitle
-                content='Para Iphone ou android. Não importa a plataforma, temos o produto certo para você.'
-                className='subtitleDark'
+                content='Eleito o melhor headphone da catgeoria.'
               />
-              <GroupInfo
-                title='Desgin exclusivo'
-                content='Desenvolvido por designers profissionais'
-                className='featureCard'
-                titleClassName='cardTitle'
-                contentClassName='cardSubTitle'
-              >
-                <MdDesignServices size={24} />
-              </GroupInfo>
-              <GroupInfo
-                title='Praticidade total'
-                content='Pensado para proporcionar total praticidade'
-                className='featureCard'
-                titleClassName='cardTitle'
-                contentClassName='cardSubTitle'
-              >
-                <MdOutlineFastForward size={24} />
-              </GroupInfo>
+              <SecondSectionFeaturesContainer>
+                <SecondSectionCardsContainer>
+                  <GroupInfo
+                    title='Desgin exclusivo'
+                    content='Desenvolvido por designers profissionais'
+                    className='featureCard'
+                    titleClassName='cardTitle'
+                    contentClassName='cardSubTitle'
+                  >
+                    <MdDesignServices size={24} />
+                  </GroupInfo>
+                  <GroupInfo
+                    title='Praticidade total'
+                    content='Pensado para proporcionar total praticidade'
+                    className='featureCard'
+                    titleClassName='cardTitle'
+                    contentClassName='cardSubTitle'
+                  >
+                    <MdOutlineFastForward size={24} />
+                  </GroupInfo>
+                </SecondSectionCardsContainer>
+                <RevealFade
+                  right
+                >
+                  <NextImage
+                    url="/phone2.png"
+                    width={300}
+                    height={300}
+                  />
+                </RevealFade>
+              </SecondSectionFeaturesContainer>
             </SecondSectionColumnContainer>
-            <RevealFade
-              right
-            >
-              <NextImage
-                url="/phone2.png"
-                width={300}
-                height={300}
-              />
-            </RevealFade>
           </SecondSectionLineContainer>
         </RevealFade>
       </SecondSection>
 
       <ThirdSection
-        id="third-section"
+        id="recursos"
       >
         <ThirdSectionColumnContainer>
           <Title
-            content='Curta cada momento com o super headphone'
+            content='Conheça todos os recursos do super headphone'
           />
           <RevealFade>
             <ThirdSectionLineContainer>
-              <GroupInfo
-                title='Praticidade total'
-                content='Pensado para proporcionar total praticidade'
-                className='featureBadgeCard'
-                titleClassName='cardTitle'
-                contentClassName='cardSubTitle'
-              >
-                <MdOutlineFastForward size={24} className='icon' />
-              </GroupInfo>
-              <GroupInfo
-                title='Praticidade total'
-                content='Pensado para proporcionar total praticidade'
-                className='featureBadgeCard'
-                titleClassName='cardTitle'
-                contentClassName='cardSubTitle'
-              >
-                <MdZoomOut size={24} className='icon' />
-              </GroupInfo>
-              <GroupInfo
-                title='Praticidade total'
-                content='Pensado para proporcionar total praticidade'
-                className='featureBadgeCard'
-                titleClassName='cardTitle'
-                contentClassName='cardSubTitle'
-              >
-                <Md2KPlus size={24} className='icon' />
-              </GroupInfo>
+              {features.slice(0, 3).map(feature => (
+                <GroupInfo
+                  title={feature.title}
+                  content={feature.content}
+                  className='featureBadgeCard'
+                  titleClassName='cardTitle'
+                  contentClassName='cardSubTitle'
+                >
+                </GroupInfo>
+              ))}
             </ThirdSectionLineContainer>
           </RevealFade>
           <RevealFade>
             <ThirdSectionLineContainer>
-              <GroupInfo
-                title='Praticidade total'
-                content='Pensado para proporcionar total praticidade'
-                className='featureBadgeCard'
-                titleClassName='cardTitle'
-                contentClassName='cardSubTitle'
-              >
-                <MdFollowTheSigns size={24} className='icon' />
-              </GroupInfo>
-              <GroupInfo
-                title='Praticidade total'
-                content='Pensado para proporcionar total praticidade'
-                className='featureBadgeCard'
-                titleClassName='cardTitle'
-                contentClassName='cardSubTitle'
-              >
-                <MdCellWifi size={24} className='icon' />
-              </GroupInfo>
+              {features.slice(3, 5).map(feature => (
+                <GroupInfo
+                  title={feature.title}
+                  content={feature.content}
+                  className='featureBadgeCard'
+                  titleClassName='cardTitle'
+                  contentClassName='cardSubTitle'
+                >
+                </GroupInfo>
+              ))}
             </ThirdSectionLineContainer>
           </RevealFade>
           <RevealFade>
             <ThirdSectionLineContainer>
-              <GroupInfo
-                title='Praticidade total'
-                content='Pensado para proporcionar total praticidade'
-                className='featureBadgeCard'
-                titleClassName='cardTitle'
-                contentClassName='cardSubTitle'
-              >
-                <MdOutlineFastForward size={24} className='icon' />
-              </GroupInfo>
-              <GroupInfo
-                title='Praticidade total'
-                content='Pensado para proporcionar total praticidade'
-                className='featureBadgeCard'
-                titleClassName='cardTitle'
-                contentClassName='cardSubTitle'
-              >
-                <MdOutlineFastForward size={24} className='icon' />
-              </GroupInfo>
-              <GroupInfo
-                title='Praticidade total'
-                content='Pensado para proporcionar total praticidade'
-                className='featureBadgeCard'
-                titleClassName='cardTitle'
-                contentClassName='cardSubTitle'
-              >
-                <MdOutlineFastForward size={24} className='icon' />
-              </GroupInfo>
+              {features.slice(5, 8).map(feature => (
+                <GroupInfo
+                  title={feature.title}
+                  content={feature.content}
+                  className='featureBadgeCard'
+                  titleClassName='cardTitle'
+                  contentClassName='cardSubTitle'
+                >
+                </GroupInfo>
+              ))}
             </ThirdSectionLineContainer>
           </RevealFade>
         </ThirdSectionColumnContainer>
@@ -223,7 +185,7 @@ const Home: NextPage = () => {
             content='Curta sua música'
           />
           <Text
-            content='Crie landing pages incríveis e personalizadas para seu produto. Comece hoje mesmo. Acesse www.pablosilvadev.com.br'
+            content='Adquira hoje mesmo o melhor headphone do mercado e viva momentos incríveis.'
           />
           <FourthSectionLineContainer
           >
@@ -238,7 +200,7 @@ const Home: NextPage = () => {
         </FourthSectionColumnContainer>
       </FourthSection>
 
-      <FifthSection>
+      <FifthSection id='purchase'>
         <FifthSectionLineContainer>
           <Title
             content='Curta cada batida. Garanta seu novo headphone.'
@@ -249,7 +211,7 @@ const Home: NextPage = () => {
           />
         </FifthSectionLineContainer>
       </FifthSection>
-    </PageContainer>
+    </PageContainer >
   )
 }
 
