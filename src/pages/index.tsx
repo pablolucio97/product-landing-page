@@ -41,7 +41,13 @@ const Home: NextPage = () => {
   return (
     <PageContainer>
       <Head>
-        <title>PSD - Landing Page</title>
+        <title>HeadPhone | Comprar headphone</title>
+          {/* @ts-ignore */}
+          <meta charset="UTF-8" />
+        <meta name="description" content="Landing pages de alta conversão e sites profissionais" />
+        <meta name="keywords" content="pablosilvadev pablo silva psd landing pages site institucional profissional " />
+        <meta name='author' content='Pablo Silva' />
+        <meta name="theme-color" content="#5454d4" />
       </Head>
       <FirstSection id="top-section">
         <FirstSectionLineContainer>

@@ -40,7 +40,6 @@ const Home = ({ children }: LayoutProps) => {
     function scrollscrollsAnimation() {
         //@ts-ignore
         const topPos = window.scrollY
-        console.log(topPos)
         if (topPos > 20) {
             setHeaderAnimation(true)
         } else {
@@ -51,7 +50,6 @@ const Home = ({ children }: LayoutProps) => {
     function scrollTopScrollButtonAnimation() {
         //@ts-ignore
         const topPos = window.scrollY
-        console.log(topPos)
         if (topPos > 500) {
             setScrollTopAnimation(true)
         } else {
